@@ -29,6 +29,7 @@ abstract class AbstractGiftAction implements Discount\DiscountInterface
 
     const ITEM_OPTION_UNIQUE_ID = 'freeproduct_gift_unique_id';
     const RULE_DATA_KEY_SKU = 'gift_sku';
+    const RULE_DATA_KEY_PER_QTY = 'gift_per_qty';
     const PRODUCT_TYPE_FREEPRODUCT = 'freeproduct_gift';
     const APPLIED_FREEPRODUCT_RULE_IDS = '_freeproduct_applied_rules';
     /**
@@ -91,6 +92,12 @@ abstract class AbstractGiftAction implements Discount\DiscountInterface
             try
             {
                 $giftQty = $this->getGiftQty($item, $rule, $qty);
+
+                if ($giftQty <= 0)
+                {
+                    continue;
+                }
+
                 $quoteItem = $item->getQuote()->addProduct($this->getGiftProduct($sku), $giftQty);
                 $item->getQuote()->setItemsCount($item->getQuote()->getItemsCount() + 1);
                 $item->getQuote()->setItemsQty((float)$item->getQuote()->getItemsQty() + $giftQty);

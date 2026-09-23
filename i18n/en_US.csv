@@ -1,4 +1,7 @@
 "Add a Gift","Add a Gift"
 "Add a Gift (For each cart item)","Add a Gift (For each cart item)"
+"Add a Gift (per X qty)","Add a Gift (per X qty)"
 "Gift SKU","Gift SKU"
+"Gift per Qty","Gift per Qty"
+"Qty of product A needed per gift. Decimals allowed.","Qty of product A needed per gift. Decimals allowed."
 "Only simple and virtual types are supported.","Only simple and virtual types are supported."

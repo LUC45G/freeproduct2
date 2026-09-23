@@ -25,5 +25,28 @@
                 </item>
             </argument>
         </field>
+        <field name="gift_per_qty">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Gift per Qty</item>
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">sales_rule</item>
+                    <item name="dataScope" xsi:type="string">gift_per_qty</item>
+                    <item name="sortOrder" xsi:type="number">2</item>
+                    <item name="notice" xsi:type="string" translate="true">Qty of product A needed per gift. Decimals allowed.</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-number" xsi:type="boolean">true</item>
+                        <item name="validate-greater-than-zero" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="depends" xsi:type="array">
+                        <item name="simple_action" xsi:type="array">
+                            <item name="value" xsi:type="string">add_gift_per_qty</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </field>
     </fieldset>
 </form>
